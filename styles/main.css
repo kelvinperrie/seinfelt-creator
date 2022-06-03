@@ -1,0 +1,22 @@
+
+.image-selector img {
+  max-width: 200px;
+}
+#drawing-area {
+  width: 800px;
+  height: 600px;
+  border: 1px solid black;
+  position: relative;
+}
+.draggable {
+  position: absolute;
+}
+
+.accordion-body {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.selected {
+  border: 1px yellow dotted;
+}
