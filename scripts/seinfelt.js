@@ -21,6 +21,7 @@ var Editor = function() {
         $(newImage).addClass("draggable");
         $(newImage).removeClass("addable-image");
         $(newImage).attr("draggable", true);
+        $(newImage).css("z-index", 200);
 
         $(newImage).on("dragstart", function(event) {
             self.handleDragStart(event);
@@ -44,6 +45,7 @@ var Editor = function() {
             $(".draggable").removeClass("selected");
             $(event.target).addClass("selected");
         }
+        event.stopPropagation();
     }
 
     self.handleDrop = function(event) {
@@ -70,6 +72,45 @@ var Editor = function() {
         console.log(event.target)
     };
 
+    self.SelectNone = function() {
+        $(".selected").removeClass("selected");
+    }
+    self.DeleteSelected = function() {
+        $('.selected').remove();
+        //self.UpdateToolBarButtonEnablednesssss();
+    }
+    self.MoveTowardsFront = function() {
+        var currentZ = $('.selected').css("z-index");
+        currentZ = parseInt(currentZ) + 10;
+        $('.selected').css('z-index', currentZ);
+    }
+    self.MoveTowardsBack = function() {
+        console.log("move back")
+        var currentZ = $('.selected').css("z-index");
+        console.log(currentZ)
+        currentZ = parseInt(currentZ) - 10;
+        $('.selected').css('z-index', currentZ);
+    }
+    self.FlipHorizontal = function() {
+        var currentTransform = $('.selected').css("transform");
+        var newTransform = "matrix(-1, 0, 0, 1, 0, 0)";
+        if(currentTransform == newTransform) {
+            newTransform = "matrix(1, 0, 0, 1, 0, 0)";
+        }
+        $('.selected').css("transform", newTransform);
+    }
+    self.MakeSmaller = function() {
+        var imgWidth = $('.selected').width();
+        imgWidth = imgWidth * .9;
+        $('.selected').width(imgWidth);
+    }
+    self.MakeBigger = function() {
+        var imgWidth = $('.selected').width();
+        imgWidth = imgWidth * 1.1;
+        $('.selected').width(imgWidth);
+    }
+
+    
     self.initialize = function() {
         console.log("doing setup")
         $("#drawing-area").on("dragover", function(event) {
@@ -87,6 +128,29 @@ var Editor = function() {
         });
         $(".background-image").on("click", function(event) {
             self.setBackground(this, event);
+        });
+        $("#drawing-area").on("click", function(event) {
+            self.SelectNone();
+        })
+
+        // tool bar actions
+        $("#move-forwards-button").on("click", function() {
+            self.MoveTowardsFront();
+        });
+        $("#move-backwards-button").on("click", function() {
+            self.MoveTowardsBack();
+        });
+        $("#delete-button").on("click", function() {
+            self.DeleteSelected();
+        });
+        $("#flip-on-horizontal-button").on("click", function() {
+            self.FlipHorizontal();
+        });
+        $("#make-smaller-button").on("click", function() {
+            self.MakeSmaller();
+        });
+        $("#make-bigger-button").on("click", function() {
+            self.MakeBigger();
         });
     };
     self.initialize();

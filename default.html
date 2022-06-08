@@ -13,11 +13,12 @@
     <div class="container">
         <div class="row">
             <div class="col">
+              Click to add!
                 <div class="accordion image-selector" id="accordionExample">
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                          Accordion Item #1
+                          Backgrounds
                         </button>
                       </h2>
                       <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -34,7 +35,7 @@
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          Accordion Item #2
+                          Peoples
                         </button>
                       </h2>
                       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -45,13 +46,16 @@
                             <div>
                                 <img id="person2" src="images/kramer-slide.png" alt="kramer slide" draggable="false" class="addable-image"/>
                             </div>
+                            <div>
+                                <img id="person3" src="images/george-shrug.png" alt="george shrug" draggable="false" class="addable-image"/>
+                            </div>
                         </div>
                       </div>
                     </div>
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                          Accordion Item #3
+                          Heck if i know
                         </button>
                       </h2>
                       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -67,19 +71,47 @@
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link waves-effect waves-light" href="#" title="delete selected">
+                            <a class="nav-link waves-effect waves-light" id="delete-button" href="#" title="delete selected">
                               <span class="material-symbols-outlined">
                                   delete
                               </span>
                             </a>
                           </li>
-                        <li class="nav-item">
-                          <a class="nav-link waves-effect waves-light" href="#" title="flip selected on the vertical">
-                            <span class="material-symbols-outlined">
-                                flip
-                            </span>
-                          </a>
-                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" id="flip-on-horizontal-button" href="#" title="flip selected on the vertical">
+                              <span class="material-symbols-outlined">
+                                  flip
+                              </span>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" id="move-forwards-button" href="#" title="move towards front">
+                              <span class="material-symbols-outlined">
+                                  forward
+                              </span>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" id="move-backwards-button" href="#" title="move towards back">
+                              <span class="material-symbols-outlined">
+                                  reply
+                              </span>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" id="make-smaller-button" href="#" title="make selected smaller">
+                              <span class="material-symbols-outlined">
+                                  zoom_in_map
+                              </span>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link waves-effect waves-light" id="make-bigger-button" href="#" title="make selected bigger">
+                              <span class="material-symbols-outlined">
+                                  zoom_out_map
+                              </span>
+                            </a>
+                          </li>
                       </ul>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent-3"></div>
                   </nav>

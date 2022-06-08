@@ -1,12 +1,16 @@
-
+.image-selector {
+  width: 300px;
+}
 .image-selector img {
   max-width: 200px;
+  max-height: 200px;
 }
 #drawing-area {
   width: 800px;
   height: 600px;
   border: 1px solid black;
   position: relative;
+  overflow: hidden;
 }
 .draggable {
   position: absolute;
@@ -18,7 +22,7 @@
 }
 
 .selected {
-  border: 1px yellow dotted;
+  outline: 2px yellow dotted;
 }
 
 
