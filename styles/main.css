@@ -1,5 +1,5 @@
 .image-selector {
-  width: 300px;
+  width: 250px;
 }
 .image-selector img {
   max-width: 200px;
@@ -42,4 +42,9 @@
 }
 .material-symbols-outlined {
   font-size: 35px;
+}
+
+.my-col {
+  display: inline-block;
+  vertical-align: top;
 }
